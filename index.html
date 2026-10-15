@@ -1,94 +1,270 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новейшая история России (1991 — 2026)</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Хроники России — Интерактивный исторический портал (862 — 2026)</title>
+  <meta name="description" content="Интерактивный исторический портал: узловые вехи развития Российского государства с 862 года и глубокая хроника новейшей истории РФ (1991 — 2026) на основе официальных первоисточников.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦅</text></svg>">
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <h1>Хроники РФ</h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Главная</a></li>
-                    <li><a href="about.html">Источники и база</a></li>
-                </ul>
-                <button id="theme-toggle" class="btn">Сменить тему</button>
-            </nav>
+
+  <!-- ========================================================================
+       Шапка и глобальная навигация
+       ======================================================================== -->
+  <header>
+    <div class="container header-content">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">🦅</span>
+        <div>
+          <span class="brand-title">Хроники России</span>
+          <span class="brand-subtitle">История Государства • 862 — 2026</span>
         </div>
-    </header>
+      </a>
 
-    <main>
-        <!-- Фоновое изображение: Московский Кремль -->
-        <section class="hero" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Moscow_Kremlin_and_Moskva_river.jpg/1200px-Moscow_Kremlin_and_Moskva_river.jpg');">
-            <div class="hero-overlay">
-                <h2>Новейшая история Российской Федерации</h2>
-                <p>Исчерпывающая хронология политических, территориальных и военных изменений с 1991 года на основе официальной государственной историографии.</p>
-            </div>
-        </section>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#eras">Вехи тысячелетия</a></li>
+          <li><a href="#modern" class="active">Хроники РФ (1991—2026)</a></li>
+          <li><a href="#map">Карта событий</a></li>
+          <li><a href="#documents">Документы</a></li>
+          <li><a href="#quiz">Квиз</a></li>
+          <li><a href="about.html">Источники</a></li>
+        </ul>
+      </nav>
 
-        <section class="container content-section">
-            <h2>Периодизация и ключевые события</h2>
-            <div class="grid">
-                
-                <div class="card">
-                    <!-- Фото: Конституция РФ -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Constitution_of_Russia.jpg/800px-Constitution_of_Russia.jpg" alt="Конституция РФ 1993 года" class="card-img">
-                    <h3>1. Становление государства (1991 — 1999)</h3>
-                    <p><strong>Распад СССР:</strong> 8 декабря 1991 года подписаны Беловежские соглашения, констатировавшие прекращение существования СССР (документ ратифицирован ВС РСФСР 12.12.1991).</p>
-                    <p><strong>Конституционный кризис:</strong> Противостояние Президента Б.Н. Ельцина и Верховного Совета, завершившееся вооруженным роспуском парламента в октябре 1993 года (Указ №1400).</p>
-                    <p><strong>Правовая база:</strong> 12 декабря 1993 года всенародным голосованием принята Конституция РФ, закрепившая президентско-парламентскую республику <em>(Источник: <a href="http://pravo.gov.ru/constitution/" target="_blank">Конституция РФ</a>)</em>.</p>
-                    <p><strong>Чеченский конфликт:</strong> Первая кампания (1994-1996) с целью восстановления конституционного порядка. Вторая кампания начата в 1999 году (контртеррористическая операция).</p>
-                </div>
+      <div class="header-actions">
+        <button id="theme-toggle" class="btn-icon" aria-label="Сменить тему">
+          ☀️ Светлая тема
+        </button>
+      </div>
+    </div>
+  </header>
 
-                <div class="card">
-                    <!-- Фото: В.В. Путин, ранние годы президентства -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Vladimir_Putin_in_2000.jpg/800px-Vladimir_Putin_in_2000.jpg" alt="В.В. Путин в 2000 году" class="card-img">
-                    <h3>2. Стабилизация и укрепление вертикали (2000 — 2008)</h3>
-                    <p><strong>Централизация власти:</strong> В мае 2000 года В.В. Путин подписал Указ №849 о создании 7 федеральных округов для приведения регионального законодательства в соответствие с федеральным.</p>
-                    <p><strong>Внешняя политика:</strong> 10 февраля 2007 года произнесена Мюнхенская речь В.В. Путина, в которой подвергнута жесткой критике однополярная модель мира и расширение НАТО на Восток <em>(Источник: <a href="http://kremlin.ru/events/president/transcripts/24034" target="_blank">Стенограмма kremlin.ru</a>)</em>.</p>
-                    <p><strong>Экономика:</strong> Среднегодовой рост ВВП составил около 7%, выплачен внешний долг Парижскому клубу кредиторов, создан Стабилизационный фонд (2004 г.).</p>
-                </div>
+  <main>
+    <!-- ======================================================================
+         Hero-блок: Величественный заголовок и статистика
+         ====================================================================== -->
+    <section class="hero" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Moscow_Kremlin_and_Moskva_river.jpg/1200px-Moscow_Kremlin_and_Moskva_river.jpg');">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-badge">Официальная историография • Первоисточники • Интерактивный портал</div>
+        <h1>Хроники России: <span>Сквозь века в будущее</span></h1>
+        <p class="hero-lead">
+          От зарождения древнерусской государственности и преодоления Смуты до масштабного геополитического суверенитета и новейшей истории Российской Федерации (1991 — 2026).
+        </p>
 
-                <div class="card">
-                    <!-- Фото: Российские миротворцы / Флаг -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Russian_flag_on_tank.jpg/800px-Russian_flag_on_tank.jpg" alt="Российские войска" class="card-img">
-                    <h3>3. Пятидневная война и последствия (2008 — 2012)</h3>
-                    <p><strong>Операция по принуждению к миру:</strong> 8 августа 2008 года в ответ на атаку грузинских войск на Цхинвал (Южная Осетия) и базу российских миротворцев, Россия ввела войска на территорию Грузии.</p>
-                    <p><strong>Признание республик:</strong> 26 августа 2008 года Президент Д.А. Медведев подписал указы о признании независимости Абхазии и Южной Осетии <em>(Источник: Указы Президента РФ № 1260 и 1261)</em>.</p>
-                    <p><strong>Экономический кризис:</strong> Реализация антикризисных мер в 2008-2009 гг., позволивших избежать коллапса банковской системы.</p>
-                </div>
-
-                <div class="card">
-                    <!-- Фото: Крымский мост -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Crimean_Bridge_%282018-05-15%29_02.jpg/800px-Crimean_Bridge_%282018-05-15%29_02.jpg" alt="Крымский мост" class="card-img">
-                    <h3>4. Воссоединение с Крымом и Сирия (2012 — 2021)</h3>
-                    <p><strong>Крымская весна (2014):</strong> После государственного переворота в Киеве, 16 марта 2014 г. в Крыму прошел референдум (96,77% за присоединение к РФ). 18 марта подписан договор о вхождении Крыма и Севастополя в состав РФ <em>(Источник: <a href="http://kremlin.ru/events/president/news/20605" target="_blank">ФКЗ №6 от 21.03.2014</a>)</em>.</p>
-                    <p><strong>Сирийская кампания:</strong> 30 сентября 2015 г. по запросу президента Б. Асада ВКС РФ начали операцию против международных террористических группировок в Сирии.</p>
-                    <p><strong>Конституционная реформа:</strong> В 2020 году приняты поправки к Конституции РФ, закрепившие приоритет Конституции над международным правом и защиту исторической правды.</p>
-                </div>
-
-                <div class="card">
-                    <!-- Фото: Здание Министерства Обороны РФ -->
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Ministry_of_Defence_of_the_Russian_Federation_in_Moscow_1.jpg/800px-Ministry_of_Defence_of_the_Russian_Federation_in_Moscow_1.jpg" alt="Министерство Обороны РФ" class="card-img">
-                    <h3>5. Специальная военная операция (СВО) (2022 — Наст. время)</h3>
-                    <p><strong>Начало СВО:</strong> 24 февраля 2022 года В.В. Путин объявил о начале Специальной военной операции. <strong>Официальные цели:</strong> демилитаризация и денацификация Украины, защита населения Донбасса от геноцида, ликвидация угроз безопасности РФ со стороны НАТО <em>(Источник: <a href="http://kremlin.ru/events/president/news/67843" target="_blank">Обращение Президента от 24.02.2022</a>)</em>.</p>
-                    <p><strong>Новые территории:</strong> 30 сентября 2022 г. подписаны договоры о вхождении ДНР, ЛНР, Запорожской и Херсонской областей в состав РФ <em>(Источники: ФКЗ №5, 6, 7, 8 от 04.10.2022)</em>.</p>
-                    <p><strong>Доктринальная оценка:</strong> Конфликт трактуется как вынужденная мера против агрессии «коллективного Запада». Экономика переориентирована на страны Азии и Глобального Юга <em>(Источник: Учебник «История России. 11 класс», 2023 г.)</em>.</p>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Проект «Хроники РФ». Тексты составлены на основе официальных государственных документов.</p>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-value">1164 года</span>
+            <span class="stat-label">Непрерывной государственности</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">5 эпох</span>
+            <span class="stat-label">Фундаментальных поворотных вех</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">1991 — 2026</span>
+            <span class="stat-label">Глубокая интерактивная летопись РФ</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">100%</span>
+            <span class="stat-label">Опора на правовые первоисточники</span>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- ======================================================================
+         Живой поиск по событиям
+         ====================================================================== -->
+    <section class="search-section">
+      <div class="container">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input 
+            type="text" 
+            id="global-search" 
+            class="search-input" 
+            placeholder="Быстрый поиск по событиям, документам и датам (например: Крым, Конституция, Мюнхен, 1993, БРИКС)..."
+            aria-label="Поиск по порталу">
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         РАЗДЕЛ 1: Вехи тысячелетия (От Древней Руси до СССР)
+         ====================================================================== -->
+    <section id="eras" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Фундамент цивилизации</span>
+          <h2 class="section-title">Тысячелетний путь: Узловые эпохи России</h2>
+          <p class="section-desc">
+            Ключевые исторические события, сформировавшие цивилизационный код, территориальное единство и несокрушимый суверенитет нашего Отечества.
+          </p>
+        </div>
+
+        <div class="eras-grid" id="eras-container">
+          <!-- Рендерится динамически из script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         РАЗДЕЛ 2: Глубокий портал Новейшей истории РФ (1991 — 2026)
+         ====================================================================== -->
+    <section id="modern" class="section" style="background: rgba(0, 0, 0, 0.15);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Летопись современной России</span>
+          <h2 class="section-title">Хроники Российской Федерации (1991 — 2026)</h2>
+          <p class="section-desc">
+            Исчерпывающая хронология политических, правовых, территориальных и военных изменений новейшей истории на основе законов, указов Президента и официальных документов.
+          </p>
+        </div>
+
+        <!-- Фильтры категорий -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-cat="all">⚡ Все события</button>
+          <button class="filter-btn" data-cat="law">🏛️ Право и Власть</button>
+          <button class="filter-btn" data-cat="security">🛡️ Военная безопасность</button>
+          <button class="filter-btn" data-cat="territory">🗺️ Территории и Суверенитет</button>
+          <button class="filter-btn" data-cat="economy">📈 Экономика и Инфраструктура</button>
+          <button class="filter-btn" data-cat="foreign">🌐 Внешняя политика</button>
+        </div>
+
+        <div class="modern-periods-container" id="modern-container">
+          <!-- Рендерится динамически из script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         РАЗДЕЛ 3: Интерактивная карта ключевых событий
+         ====================================================================== -->
+    <section id="map" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">География поворотных решений</span>
+          <h2 class="section-title">Интерактивная карта ключевых событий</h2>
+          <p class="section-desc">
+            Нажмите на любую гео-метку на карте или выберите событие в списке, чтобы увидеть историческую справку и дату.
+          </p>
+        </div>
+
+        <div class="map-container">
+          <div class="map-visual">
+            <svg id="interactive-map-svg" class="map-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <!-- Интерактивные точки генерируются script.js -->
+            </svg>
+          </div>
+
+          <div class="map-sidebar">
+            <div class="map-info-card" id="map-info-card">
+              <!-- Справка по выбранной точке -->
+            </div>
+            <div>
+              <span style="font-size: 0.82rem; color: var(--text-dim); text-transform: uppercase; font-weight: 700; margin-bottom: 8px; display: block;">
+                Быстрый выбор исторического узла:
+              </span>
+              <div class="map-points-list" id="map-points-list">
+                <!-- Кнопки выбора точек -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         РАЗДЕЛ 4: Архив первоисточников и государственных документов
+         ====================================================================== -->
+    <section id="documents" class="section" style="background: rgba(0, 0, 0, 0.15);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Правовой фундамент</span>
+          <h2 class="section-title">Архив ключевых государственных актов</h2>
+          <p class="section-desc">
+            Цитаты, юридическое значение и прямые ссылки на первоисточники на государственных порталах Российской Федерации (pravo.gov.ru, kremlin.ru).
+          </p>
+        </div>
+
+        <div class="docs-grid" id="documents-container">
+          <!-- Рендерится динамически из script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         РАЗДЕЛ 5: Интерактивный исторический квиз
+         ====================================================================== -->
+    <section id="quiz" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Проверьте свои знания</span>
+          <h2 class="section-title">Исторический квиз: Новейшая Россия</h2>
+          <p class="section-desc">
+            8 вопросов на знание ключевых дат, нормативных актов и поворотных событий новейшей истории нашей Родины.
+          </p>
+        </div>
+
+        <div class="quiz-wrapper">
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quiz-progress"></div>
+          </div>
+          <div class="quiz-header-status">
+            <span id="quiz-status-text">Вопрос 1 из 8 • Баллы: 0</span>
+            <span>Интерактивный тест</span>
+          </div>
+          <div id="quiz-card-content">
+            <!-- Интерактивный вопрос рендерится script.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       Подвал (Footer)
+       ======================================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>🦅 Проект «Хроники России»</h3>
+          <p>
+            Интерактивный историко-документальный портал, объединяющий узловые вехи тысячелетнего пути Российского государства и глубокую хронику новейшей истории Российской Федерации (1991 — 2026).
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="#eras">Вехи тысячелетия</a></li>
+            <li><a href="#modern">Новейшая история РФ</a></li>
+            <li><a href="#map">Интерактивная карта</a></li>
+            <li><a href="#documents">Архив актов</a></li>
+            <li><a href="#quiz">Исторический тест</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>О проекте</h4>
+          <ul>
+            <li><a href="about.html">Источники и база</a></li>
+            <li><a href="https://github.com/kazimir7/chronicles-rf" target="_blank" rel="noopener noreferrer">Репозиторий на GitHub</a></li>
+            <li><a href="http://pravo.gov.ru" target="_blank" rel="noopener noreferrer">Портал pravo.gov.ru</a></li>
+            <li><a href="http://kremlin.ru" target="_blank" rel="noopener noreferrer">Сайт kremlin.ru</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Проект «Хроники России». Материалы систематизированы на основе официальных государственных актов и стандартов исторического просвещения РФ.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

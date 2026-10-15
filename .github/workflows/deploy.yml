@@ -1,0 +1,33 @@
+name: Deploy Chronicles RF to VPS
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Вариант А: Автоматическое копирование файлов на VPS через SCP
+      # Для включения добавьте в Settings -> Secrets and variables -> Actions вашего GitHub репозитория:
+      # - VPS_HOST (IP адрес вашего сервера)
+      # - VPS_USER (например, root или ubuntu)
+      # - VPS_SSH_KEY (приватный SSH ключ)
+      # - VPS_TARGET_DIR (путь к сайту на VPS, например: /var/www/html или /var/www/kirusha)
+      - name: Copy files to VPS via SCP
+        if: "${{ env.VPS_HOST != '' }}"
+        uses: appleboy/scp-action@master
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT || 22 }}
+          source: "."
+          target: ${{ secrets.VPS_TARGET_DIR || '/var/www/html' }}
+          strip_components: 0

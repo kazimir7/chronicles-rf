@@ -1,54 +1,95 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новейшая история России — Источники</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Источники и правовая база — Хроники России</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦅</text></svg>">
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <h1>Хроники РФ</h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="about.html" class="active">Источники и база</a></li>
-                </ul>
-                <button id="theme-toggle" class="btn">Сменить тему</button>
-            </nav>
+  <header>
+    <div class="container header-content">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">🦅</span>
+        <div>
+          <span class="brand-title">Хроники России</span>
+          <span class="brand-subtitle">История Государства • 862 — 2026</span>
         </div>
-    </header>
+      </a>
 
-    <main class="container content-section">
-        <div class="about-grid">
-            <div class="about-text">
-                <h2>Официальная правовая и историческая база</h2>
-                <p>Вся информация на данном сайте, включая описание причин, хода и целей Специальной военной операции (СВО), приведена в строгом соответствии с официальной государственной позицией Российской Федерации.</p>
-                
-                <h3>Список использованных материалов:</h3>
-                <ul class="sources-list">
-                    <li><strong>Законодательство:</strong> Конституция РФ, Федеральные конституционные законы о принятии новых субъектов в состав РФ. Доступно на <a href="http://pravo.gov.ru/" target="_blank">pravo.gov.ru</a>.</li>
-                    <li><strong>Официальные заявления:</strong> Обращения Президента РФ, Концепция внешней политики РФ. Доступно на <a href="http://kremlin.ru/" target="_blank">kremlin.ru</a>.</li>
-                    <li><strong>Образовательный стандарт:</strong> Единый учебник «История России. 11 класс» (под ред. В.Р. Мединского, А.В. Торкунова, 2023 г.).</li>
-                </ul>
-                
-                <button id="alert-btn" class="btn">Показать нормативный акт об СВО</button>
-            </div>
-            <div class="about-image">
-                <!-- Фото: Государственная Дума РФ -->
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/State_Duma_of_Russia_building_1.jpg/800px-State_Duma_of_Russia_building_1.jpg" alt="Государственная Дума РФ" class="responsive-img">
-                <p class="caption">Здание Государственной Думы РФ, Москва</p>
-            </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html#eras">Вехи тысячелетия</a></li>
+          <li><a href="index.html#modern">Хроники РФ (1991—2026)</a></li>
+          <li><a href="index.html#map">Карта событий</a></li>
+          <li><a href="index.html#documents">Документы</a></li>
+          <li><a href="index.html#quiz">Квиз</a></li>
+          <li><a href="about.html" class="active">Источники</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="btn-icon">
+          ☀️ Светлая тема
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div class="section-header" style="text-align: left; max-width: 1000px; margin-bottom: 40px;">
+      <span class="section-tag">Методология и достоверность</span>
+      <h1 class="section-title">Официальная правовая и историческая база</h1>
+      <p class="section-desc">
+        Вся информация на данном портале, включая хронологию, описание причин, хода и целей Специальной военной операции (СВО), приведена в строгом соответствии с официальной государственной позицией и правовыми актами Российской Федерации.
+      </p>
+    </div>
+
+    <div class="map-container" style="grid-template-columns: 1fr 1fr; align-items: start;">
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div class="period-block" style="padding: 24px;">
+          <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 1.25rem;">⚖️ Государственные правовые акты</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem; color: var(--text-muted);">
+            <li><strong>Конституция РФ:</strong> Основной закон, закрепляющий суверенитет и защиту исторической правды (<a href="http://pravo.gov.ru/constitution/" target="_blank" style="color: var(--primary);">pravo.gov.ru</a>).</li>
+            <li><strong>ФКЗ № 6 от 21.03.2014:</strong> Закон о вхождении Республики Крым и Севастополя в состав РФ.</li>
+            <li><strong>ФКЗ № 5, 6, 7, 8 от 04.10.2022:</strong> Законы о принятии ДНР, ЛНР, Запорожской и Херсонской областей.</li>
+            <li><strong>Постановление СФ № 35-СФ от 22.02.2022:</strong> Постановление Совета Федерации об использовании ВС РФ за пределами страны.</li>
+            <li><strong>Статья 51 Устава ООН:</strong> Международное право на индивидуальную и коллективную самооборону.</li>
+          </ul>
         </div>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Проект «Хроники РФ».</p>
+        <div class="period-block" style="padding: 24px;">
+          <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 1.25rem;">📚 Единый образовательный стандарт</h3>
+          <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+            Освещение исторических эпох и событий Новейшей истории опирается на государственный историко-культурный стандарт и единые государственные учебники «История России» (под ред. В.Р. Мединского и А.В. Торкунова).
+          </p>
         </div>
-    </footer>
+      </div>
 
-    <script src="script.js"></script>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div class="period-block" style="padding: 24px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/State_Duma_of_Russia_building_1.jpg/800px-State_Duma_of_Russia_building_1.jpg" alt="Государственная Дума РФ" style="width: 100%; height: 240px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 16px;">
+          <h4 style="font-size: 1.1rem; margin-bottom: 8px;">Государственная дума и Совет Федерации Федерального Собрания РФ</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Высший представительный и законодательный орган Российской Федерации, формирующий правовой каркас страны.
+          </p>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; border-radius: var(--radius-sm); text-align: center;">
+          <p style="font-size: 0.95rem; margin-bottom: 14px;">Хотите вернуться к интерактивному исследованию портала?</p>
+          <a href="index.html" class="quiz-btn-next" style="display: inline-block; text-decoration: none;">&larr; Вернуться на Главную</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-bottom" style="border: none; margin-top: 0;">
+      <p>&copy; 2026 Проект «Хроники России». Все права защищены. <a href="index.html" style="color: var(--primary);">На главную</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
