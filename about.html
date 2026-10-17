@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Источники и правовая база — Хроники России</title>
+  <title>Источники и методология — Хроники России</title>
+  <meta name="description" content="Официальная историографическая и правовая база портала «Хроники России». Первоисточники, Конституция РФ, федеральные законы и образовательные стандарты.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦅</text></svg>">
 </head>
 <body>
   <header>
     <div class="container header-content">
-      <a href="index.html" class="brand">
+      <a href="index.html" class="brand" aria-label="На главную">
         <span class="brand-icon">🦅</span>
         <div>
           <span class="brand-title">Хроники России</span>
@@ -18,19 +21,19 @@
         </div>
       </a>
 
-      <nav>
+      <nav aria-label="Навигация страницы">
         <ul class="nav-links">
-          <li><a href="index.html#eras">Вехи тысячелетия</a></li>
-          <li><a href="index.html#modern">Хроники РФ (1991—2026)</a></li>
-          <li><a href="index.html#map">Карта событий</a></li>
-          <li><a href="index.html#documents">Документы</a></li>
-          <li><a href="index.html#quiz">Квиз</a></li>
-          <li><a href="about.html" class="active">Источники</a></li>
+          <li><a href="index.html#chronology">📜 Хронология</a></li>
+          <li><a href="index.html#map">🗺️ Карта</a></li>
+          <li><a href="index.html#figures">👑 Личности</a></li>
+          <li><a href="index.html#documents">⚖️ Документы</a></li>
+          <li><a href="index.html#quiz">🧠 Квиз</a></li>
+          <li><a href="about.html" class="active">📖 Источники</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <button id="theme-toggle" class="btn-icon">
+        <button id="theme-toggle" class="btn-header" aria-label="Сменить тему">
           ☀️ Светлая тема
         </button>
       </div>
@@ -38,47 +41,53 @@
   </header>
 
   <main class="container section">
-    <div class="section-header" style="text-align: left; max-width: 1000px; margin-bottom: 40px;">
+    <div class="section-header" style="text-align: left; max-width: 900px; margin-bottom: 40px;">
       <span class="section-tag">Методология и достоверность</span>
       <h1 class="section-title">Официальная правовая и историческая база</h1>
       <p class="section-desc">
-        Вся информация на данном портале, включая хронологию, описание причин, хода и целей Специальной военной операции (СВО), приведена в строгом соответствии с официальной государственной позицией и правовыми актами Российской Федерации.
+        Вся информация на данном портале приведена в строгом соответствии с летописными источниками, академической государственной историографией и действующими нормативными правовыми актами Российской Федерации.
       </p>
     </div>
 
     <div class="map-container" style="grid-template-columns: 1fr 1fr; align-items: start;">
       <div style="display: flex; flex-direction: column; gap: 20px;">
-        <div class="period-block" style="padding: 24px;">
-          <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 1.25rem;">⚖️ Государственные правовые акты</h3>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem; color: var(--text-muted);">
-            <li><strong>Конституция РФ:</strong> Основной закон, закрепляющий суверенитет и защиту исторической правды (<a href="http://pravo.gov.ru/constitution/" target="_blank" style="color: var(--primary);">pravo.gov.ru</a>).</li>
-            <li><strong>ФКЗ № 6 от 21.03.2014:</strong> Закон о вхождении Республики Крым и Севастополя в состав РФ.</li>
-            <li><strong>ФКЗ № 5, 6, 7, 8 от 04.10.2022:</strong> Законы о принятии ДНР, ЛНР, Запорожской и Херсонской областей.</li>
-            <li><strong>Постановление СФ № 35-СФ от 22.02.2022:</strong> Постановление Совета Федерации об использовании ВС РФ за пределами страны.</li>
-            <li><strong>Статья 51 Устава ООН:</strong> Международное право на индивидуальную и коллективную самооборону.</li>
+        <div class="period-block" style="padding: 26px;">
+          <h3 style="color: var(--gold-primary); margin-bottom: 14px; font-family: var(--font-serif); font-size: 1.3rem;">⚖️ Государственные правовые акты</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem; color: var(--text-secondary);">
+            <li><strong>Конституция РФ:</strong> Основной закон, закрепляющий суверенитет, верховенство Конституции и защиту исторической правды (<a href="http://pravo.gov.ru/constitution/" target="_blank" rel="noopener noreferrer" style="color: var(--gold-light);">pravo.gov.ru</a>).</li>
+            <li><strong>ФКЗ № 6-ФКЗ от 21.03.2014:</strong> Закон о принятии Республики Крым и города Севастополя в состав РФ.</li>
+            <li><strong>ФКЗ № 5, 6, 7, 8 от 04.10.2022:</strong> Федеральные конституционные законы о принятии ДНР, ЛНР, Запорожской и Херсонской областей.</li>
+            <li><strong>Постановление СФ № 35-СФ от 22.02.2022:</strong> Постановление Совета Федерации об использовании Вооруженных Сил РФ за пределами страны.</li>
+            <li><strong>Статья 51 Устава ООН:</strong> Международное право государства на индивидуальную и коллективную самооборону.</li>
           </ul>
         </div>
 
-        <div class="period-block" style="padding: 24px;">
-          <h3 style="color: var(--primary); margin-bottom: 12px; font-size: 1.25rem;">📚 Единый образовательный стандарт</h3>
-          <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
-            Освещение исторических эпох и событий Новейшей истории опирается на государственный историко-культурный стандарт и единые государственные учебники «История России» (под ред. В.Р. Мединского и А.В. Торкунова).
-          </p>
+        <div class="period-block" style="padding: 26px;">
+          <h3 style="color: var(--gold-primary); margin-bottom: 14px; font-family: var(--font-serif); font-size: 1.3rem;">📚 Исторические памятники и летописи</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.92rem; color: var(--text-secondary);">
+            <li>«Повесть временных лет» (Лаврентьевский и Ипатьевский летописные списки).</li>
+            <li>«Русская Правда» Ярослава Мудрого (Академический список).</li>
+            <li>Судебники 1497 и 1550 годов.</li>
+            <li>Полное собрание законов Российской империи (ПСЗРИ).</li>
+            <li>Акты Потсдамской и Ялтинской конференций 1945 года.</li>
+          </ul>
         </div>
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 20px;">
-        <div class="period-block" style="padding: 24px;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/State_Duma_of_Russia_building_1.jpg/800px-State_Duma_of_Russia_building_1.jpg" alt="Государственная Дума РФ" style="width: 100%; height: 240px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 16px;">
-          <h4 style="font-size: 1.1rem; margin-bottom: 8px;">Государственная дума и Совет Федерации Федерального Собрания РФ</h4>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">
-            Высший представительный и законодательный орган Российской Федерации, формирующий правовой каркас страны.
+        <div class="period-block" style="padding: 26px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/State_Duma_of_Russia_building_1.jpg/800px-State_Duma_of_Russia_building_1.jpg" alt="Государственная Дума РФ" style="width: 100%; height: 230px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 16px;">
+          <h4 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 8px;">Единый государственный образовательный стандарт</h4>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+            Освещение исторических эпох и новейшей истории опирается на единый государственный историко-культурный стандарт и государственные учебники «История России» (под редакцией В.Р. Мединского и А.В. Торкунова).
           </p>
         </div>
 
-        <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; border-radius: var(--radius-sm); text-align: center;">
-          <p style="font-size: 0.95rem; margin-bottom: 14px;">Хотите вернуться к интерактивному исследованию портала?</p>
-          <a href="index.html" class="quiz-btn-next" style="display: inline-block; text-decoration: none;">&larr; Вернуться на Главную</a>
+        <div style="background: var(--bg-card); border: 1px solid var(--border-gold); padding: 24px; border-radius: var(--radius-md); text-align: center;">
+          <p style="font-size: 0.95rem; margin-bottom: 16px; color: var(--text-secondary);">Готовы продолжить интерактивное исследование истории?</p>
+          <a href="index.html" class="btn-cta btn-cta-primary" style="display: inline-flex; text-decoration: none;">
+            &larr; Вернуться в Цифровой Музей
+          </a>
         </div>
       </div>
     </div>
@@ -86,7 +95,7 @@
 
   <footer>
     <div class="container footer-bottom" style="border: none; margin-top: 0;">
-      <p>&copy; 2026 Проект «Хроники России». Все права защищены. <a href="index.html" style="color: var(--primary);">На главную</a></p>
+      <p>&copy; 2026 Проект «Хроники России». <a href="index.html" style="color: var(--gold-primary);">На главную страницу</a></p>
     </div>
   </footer>
 

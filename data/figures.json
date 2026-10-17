@@ -1,0 +1,90 @@
+[
+  {
+    "id": "vladimir-great",
+    "name": "Владимир Святославович",
+    "title": "Святой равноапостольный князь",
+    "years": "ок. 960 — 1015 гг.",
+    "era": "Древняя Русь",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/St_Vladimir.jpg/600px-St_Vladimir.jpg",
+    "quote": "«Руси есть веселие пити, не можем без того быти» — из Повести временных лет",
+    "impact": "Крестил Русь в 988 году, определив духовный, культурный и цивилизационный путь развития государства на тысячелетие вперед.",
+    "relatedEvent": "ancient-rus"
+  },
+  {
+    "id": "alexander-nevsky",
+    "name": "Александр Ярославич Невский",
+    "title": "Великий князь Киевский и Владимирский",
+    "years": "1221 — 1263 гг.",
+    "era": "Раздробленность и Рубежи",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Alexander_Nevsky_by_Vasnetsov.jpg/600px-Alexander_Nevsky_by_Vasnetsov.jpg",
+    "quote": "«Не в силе Бог, а в правде!»",
+    "impact": "Остановил экспансию Ливонского ордена и шведов на северо-западных рубежах Руси, защитил православную веру и русскую идентичность.",
+    "relatedEvent": "feudal-orde"
+  },
+  {
+    "id": "ivan-iii",
+    "name": "Иван III Васильевич",
+    "title": "Государь всея Руси и Великий князь",
+    "years": "1440 — 1505 гг.",
+    "era": "Единое Русское государство",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Ivan_III_of_Russia.jpg/600px-Ivan_III_of_Russia.jpg",
+    "quote": "«Отечество наше свободно от всякой чужой власти»",
+    "impact": "Сверг ордынское иго (Стояние на Угре, 1480), объединил русские земли вокруг Москвы, ввел двуглавого орла и первый общерусский Судебник.",
+    "relatedEvent": "moscow-tsardom"
+  },
+  {
+    "id": "minin-pozharsky",
+    "name": "Кузьма Минин и Дмитрий Пожарский",
+    "title": "Вожди Второго народного ополчения",
+    "years": "1611 — 1612 гг.",
+    "era": "Преодоление Смуты",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Minin_and_Pozharsky_by_Scott_detail.jpg/600px-Minin_and_Pozharsky_by_Scott_detail.jpg",
+    "quote": "«Купно за едино! Вместе за одно!»",
+    "impact": "Подняли всенародное ополчение, освободили Москву от польских интервентов и спасли русскую государственность от полного уничтожения.",
+    "relatedEvent": "moscow-tsardom"
+  },
+  {
+    "id": "peter-the-great",
+    "name": "Петр I Алексеевич Великий",
+    "title": "Первый Император Всероссийский",
+    "years": "1672 — 1725 гг.",
+    "era": "Российская империя",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Peter_the_Great_1838.jpg/600px-Peter_the_Great_1838.jpg",
+    "quote": "«А о Петре ведайте, что ему жизнь его не дорога, только бы жила Россия в блаженстве и славе»",
+    "impact": "Основал Санкт-Петербург, построил регулярный флот, победил в Северной войне и провозгласил Россию великой европейской Империей.",
+    "relatedEvent": "russian-empire"
+  },
+  {
+    "id": "catherine-great",
+    "name": "Екатерина II Алексеевна Великая",
+    "title": "Императрица Всероссийская",
+    "years": "1729 — 1796 гг.",
+    "era": "Российская империя",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Portrait_of_Catherine_II_by_F.Rokotov_%281763%2C_Tretyakov_gallery%29.jpg/600px-Portrait_of_Catherine_II_by_F.Rokotov_%281763%2C_Tretyakov_gallery%29.jpg",
+    "quote": "«Я буду защищать мою родину языком, пером и мечом, пока у меня хватит жизни»",
+    "impact": "Присоединила Крым, Тамань, Кубань и Новороссию (1783), заложила Севастополь, основала Черноморский флот и провела масштабные реформы просвещения.",
+    "relatedEvent": "russian-empire"
+  },
+  {
+    "id": "georgy-zhukov",
+    "name": "Георгий Константинович Жуков",
+    "title": "Маршал Советского Союза, Четырежды Герой",
+    "years": "1896 — 1974 гг.",
+    "era": "Великая Отечественная война",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Georgy_Zhukov_1945.jpg/600px-Georgy_Zhukov_1945.jpg",
+    "quote": "«Там, где Жуков — там победа»",
+    "impact": "Координировал оборону Ленинграда и Москвы, Сталинградскую и Курскую битвы, операцию «Багратион» и взятие Берлина. Принял Акт о безоговорочной капитуляции Германии.",
+    "relatedEvent": "soviet-union"
+  },
+  {
+    "id": "yuri-gagarin",
+    "name": "Юрий Алексеевич Гагарин",
+    "title": "Первый космонавт планеты Земля",
+    "years": "1934 — 1968 гг.",
+    "era": "Советский прорыв",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Yuri_Gagarin_%281961%29_-_Restoration.jpg/600px-Yuri_Gagarin_%281961%29_-_Restoration.jpg",
+    "quote": "«Поехали!»",
+    "impact": "12 апреля 1961 года на корабле «Восток-1» совершил первый в истории человечества полет в космическое пространство, открыв космическую эру.",
+    "relatedEvent": "soviet-union"
+  }
+]

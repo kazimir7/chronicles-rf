@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Хроники России — Интерактивный исторический портал (862 — 2026)</title>
-  <meta name="description" content="Интерактивный исторический портал: узловые вехи развития Российского государства с 862 года и глубокая хроника новейшей истории РФ (1991 — 2026) на основе официальных первоисточников.">
+  <title>Хроники России — Интерактивный исторический портал и музей (862 — 2026)</title>
+  <meta name="description" content="Интерактивный цифровой музей истории России: ключевые вехи развития государства с 862 года, интерактивная карта, исторические личности, архив первоисточников и квиз.">
+  <meta name="keywords" content="История России, Хроники России, Древняя Русь, Российская империя, СССР, Новейшая история РФ, Конституция РФ, Крым, СВО, исторические документы">
+  <meta property="og:title" content="Хроники России — Интерактивный цифровой музей">
+  <meta property="og:description" content="Путешествие сквозь века: от истоков Руси (862 г.) до современности (2026 г.) на основе официальных первоисточников.">
+  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Moscow_Kremlin_and_Moskva_river.jpg/1200px-Moscow_Kremlin_and_Moskva_river.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kirusha.duckdns.org/">
+  <link rel="canonical" href="https://kirusha.duckdns.org/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦅</text></svg>">
 </head>
@@ -15,7 +24,7 @@
        ======================================================================== -->
   <header>
     <div class="container header-content">
-      <a href="index.html" class="brand">
+      <a href="index.html" class="brand" aria-label="Хроники России">
         <span class="brand-icon">🦅</span>
         <div>
           <span class="brand-title">Хроники России</span>
@@ -23,19 +32,26 @@
         </div>
       </a>
 
-      <nav>
+      <nav aria-label="Главная навигация">
         <ul class="nav-links">
-          <li><a href="#eras">Вехи тысячелетия</a></li>
-          <li><a href="#modern" class="active">Хроники РФ (1991—2026)</a></li>
-          <li><a href="#map">Карта событий</a></li>
-          <li><a href="#documents">Документы</a></li>
-          <li><a href="#quiz">Квиз</a></li>
-          <li><a href="about.html">Источники</a></li>
+          <li><a href="#chronology" class="active">📜 Хронология</a></li>
+          <li><a href="#map">🗺️ Карта</a></li>
+          <li><a href="#figures">👑 Личности</a></li>
+          <li><a href="#documents">⚖️ Документы</a></li>
+          <li><a href="#collections">💡 Факты</a></li>
+          <li><a href="#quiz">🧠 Квиз</a></li>
+          <li><a href="about.html">📖 Источники</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <button id="theme-toggle" class="btn-icon" aria-label="Сменить тему">
+        <button class="btn-header" onclick="pickRandomEvent()" title="Случайное историческое открытие">
+          🎲 Случайное
+        </button>
+        <button class="btn-header" id="open-bookmarks-btn" title="Мои сохраненные материалы">
+          ⭐ Закладки <span class="badge-counter" id="bookmark-counter">0</span>
+        </button>
+        <button id="theme-toggle" class="btn-header" aria-label="Сменить тему оформления">
           ☀️ Светлая тема
         </button>
       </div>
@@ -44,40 +60,61 @@
 
   <main>
     <!-- ======================================================================
-         Hero-блок: Величественный заголовок и статистика
+         Hero-блок: Величественный заголовок, лента веков и статистика
          ====================================================================== -->
     <section class="hero" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Moscow_Kremlin_and_Moskva_river.jpg/1200px-Moscow_Kremlin_and_Moskva_river.jpg');">
       <div class="hero-overlay"></div>
       <div class="container hero-content">
-        <div class="hero-badge">Официальная историография • Первоисточники • Интерактивный портал</div>
-        <h1>Хроники России: <span>Сквозь века в будущее</span></h1>
+        <div class="hero-badge">Цифровой музей истории • Первоисточники • Исследовательский портал</div>
+        <h1>Хроники Государства Российского: <span>Путешествие сквозь века</span></h1>
         <p class="hero-lead">
-          От зарождения древнерусской государственности и преодоления Смуты до масштабного геополитического суверенитета и новейшей истории Российской Федерации (1991 — 2026).
+          От истоков древнерусской государственности (862 г.) и победы на Куликовом поле до Великой Победы 1945 года и новейшей истории Российской Федерации (1991 — 2026). Исследуйте поворотные вехи, карту решений и первоисточники.
         </p>
 
+        <!-- Кнопки основных действий -->
+        <div class="hero-actions-row">
+          <a href="#chronology" class="btn-cta btn-cta-primary">
+            🏛️ Начать путешествие по эпохам
+          </a>
+          <button class="btn-cta btn-cta-secondary" onclick="pickRandomEvent()">
+            🎲 Случайное событие
+          </button>
+          <button class="btn-cta btn-cta-secondary" onclick="openBookmarksDrawer()">
+            ⭐ Мой исторический архив
+          </button>
+        </div>
+
+        <!-- Интерактивная лента веков (Ribbon Timeline) -->
+        <div class="ribbon-timeline-wrapper">
+          <div class="ribbon-timeline" id="ribbon-timeline" title="Нажмите на любую веху для подробного изучения">
+            <!-- Генерируется script.js -->
+          </div>
+        </div>
+
+        <!-- 4 Музейные карточки статистики -->
         <div class="hero-stats">
           <div class="stat-card">
             <span class="stat-value">1164 года</span>
-            <span class="stat-label">Непрерывной государственности</span>
+            <span class="stat-label">Непрерывной государственной традиции</span>
           </div>
           <div class="stat-card">
-            <span class="stat-value">5 эпох</span>
-            <span class="stat-label">Фундаментальных поворотных вех</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-value">1991 — 2026</span>
-            <span class="stat-label">Глубокая интерактивная летопись РФ</span>
+            <span class="stat-value">6 эпох</span>
+            <span class="stat-label">Фундаментальных поворотных вех развития</span>
           </div>
           <div class="stat-card">
             <span class="stat-value">100%</span>
-            <span class="stat-label">Опора на правовые первоисточники</span>
+            <span class="stat-label">Опора на правовые акты и летописные своды</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">18 центров</span>
+            <span class="stat-label">На интерактивной исторической карте</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         Живой поиск по событиям
+         Поиск по порталу и быстрые теги
          ====================================================================== -->
     <section class="search-section">
       <div class="container">
@@ -87,47 +124,50 @@
             type="text" 
             id="global-search" 
             class="search-input" 
-            placeholder="Быстрый поиск по событиям, документам и датам (например: Крым, Конституция, Мюнхен, 1993, БРИКС)..."
+            placeholder="Поиск по событиям, личностям, датам и документам (например: Крым, Конституция, Петр I, 1945, Мюнхен)..."
             aria-label="Поиск по порталу">
         </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         РАЗДЕЛ 1: Вехи тысячелетия (От Древней Руси до СССР)
-         ====================================================================== -->
-    <section id="eras" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Фундамент цивилизации</span>
-          <h2 class="section-title">Тысячелетний путь: Узловые эпохи России</h2>
-          <p class="section-desc">
-            Ключевые исторические события, сформировавшие цивилизационный код, территориальное единство и несокрушимый суверенитет нашего Отечества.
-          </p>
-        </div>
-
-        <div class="eras-grid" id="eras-container">
-          <!-- Рендерится динамически из script.js -->
+        <div class="search-quick-tags">
+          <span>Популярные запросы:</span>
+          <button class="search-tag-pill" data-tag="Крым">Крым</button>
+          <button class="search-tag-pill" data-tag="Конституция">Конституция</button>
+          <button class="search-tag-pill" data-tag="Петр I">Петр I</button>
+          <button class="search-tag-pill" data-tag="1945">1945</button>
+          <button class="search-tag-pill" data-tag="Мюнхен">Мюнхенская речь</button>
+          <button class="search-tag-pill" data-tag="СВО">СВО</button>
+          <button class="search-tag-pill" data-tag="Рюрик">Рюрик</button>
+          <button class="search-tag-pill" data-tag="БРИКС">БРИКС</button>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         РАЗДЕЛ 2: Глубокий портал Новейшей истории РФ (1991 — 2026)
+         РАЗДЕЛ 1: Интерактивная Хронология (862 — 2026)
          ====================================================================== -->
-    <section id="modern" class="section">
+    <section id="chronology" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Летопись современной России</span>
-          <h2 class="section-title">Хроники Российской Федерации (1991 — 2026)</h2>
+          <span class="section-tag">Интерактивная Хроника</span>
+          <h2 class="section-title">Хронология Государства Российского</h2>
           <p class="section-desc">
-            Исчерпывающая хронология политических, правовых, территориальных и военных изменений новейшей истории на основе законов, указов Президента и официальных документов.
+            Исследуйте ключевые эпохи или воспользуйтесь фильтрами по темам. Нажмите на любое событие для глубокого изучения его причин, хода и значения.
           </p>
         </div>
 
-        <!-- Фильтры категорий -->
+        <!-- Вкладки эпох -->
+        <div class="eras-tabs-bar">
+          <button class="era-tab-btn active" data-era="all">⚡ Все эпохи</button>
+          <button class="era-tab-btn" data-era="ancient-rus">🛡️ Древняя Русь (862—1132)</button>
+          <button class="era-tab-btn" data-era="feudal-orde">⚔️ Раздробленность и Иго (1132—1480)</button>
+          <button class="era-tab-btn" data-era="moscow-tsardom">🏰 Русское царство (1480—1689)</button>
+          <button class="era-tab-btn" data-era="russian-empire">👑 Российская империя (1721—1917)</button>
+          <button class="era-tab-btn" data-era="soviet-union">⭐ Советский Союз (1917—1991)</button>
+          <button class="era-tab-btn" data-era="modern-all">🇷🇺 Новейшая Россия (1991—2026)</button>
+        </div>
+
+        <!-- Фильтры тем для Новейшей истории -->
         <div class="filter-bar">
-          <button class="filter-btn active" data-cat="all">⚡ Все события</button>
+          <button class="filter-btn active" data-cat="all">Все направления</button>
           <button class="filter-btn" data-cat="law">🏛️ Право и Власть</button>
           <button class="filter-btn" data-cat="security">🛡️ Военная безопасность</button>
           <button class="filter-btn" data-cat="territory">🗺️ Территории и Суверенитет</button>
@@ -135,22 +175,22 @@
           <button class="filter-btn" data-cat="foreign">🌐 Внешняя политика</button>
         </div>
 
-        <div class="modern-periods-container" id="modern-container">
-          <!-- Рендерится динамически из script.js -->
+        <div id="chronology-container">
+          <!-- Рендерится динамически script.js -->
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         РАЗДЕЛ 3: Интерактивная карта ключевых событий
+         РАЗДЕЛ 2: Интерактивная Историческая Карта
          ====================================================================== -->
     <section id="map" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">География поворотных решений</span>
+          <span class="section-tag">География Решений</span>
           <h2 class="section-title">Интерактивная карта ключевых событий</h2>
           <p class="section-desc">
-            Нажмите на любую гео-метку на карте или выберите событие в списке, чтобы увидеть историческую справку и дату.
+            Пространственное измерение истории: выберите исторический период или кликните по гео-метке для открытия архивной справки.
           </p>
         </div>
 
@@ -162,12 +202,21 @@
           </div>
 
           <div class="map-sidebar">
+            <div class="map-period-filter">
+              <button class="map-filter-btn active" data-period="all">Все эпохи</button>
+              <button class="map-filter-btn" data-period="ancient">Древность</button>
+              <button class="map-filter-btn" data-period="empire">Империя</button>
+              <button class="map-filter-btn" data-period="soviet">СССР</button>
+              <button class="map-filter-btn" data-period="modern">Новейшая РФ</button>
+            </div>
+
             <div class="map-info-card" id="map-info-card">
               <!-- Справка по выбранной точке -->
             </div>
+
             <div>
-              <span style="font-size: 0.82rem; color: var(--text-dim); text-transform: uppercase; font-weight: 700; margin-bottom: 8px; display: block;">
-                Быстрый выбор исторического узла:
+              <span style="font-size: 0.8rem; color: var(--gold-primary); text-transform: uppercase; font-weight: 700; margin-bottom: 8px; display: block;">
+                Быстрый переход к историческому узлу:
               </span>
               <div class="map-points-list" id="map-points-list">
                 <!-- Кнопки выбора точек -->
@@ -179,52 +228,140 @@
     </section>
 
     <!-- ======================================================================
-         РАЗДЕЛ 4: Архив первоисточников и государственных документов
+         РАЗДЕЛ 3: Исторические личности
          ====================================================================== -->
-    <section id="documents" class="section">
+    <section id="figures" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Правовой фундамент</span>
-          <h2 class="section-title">Архив ключевых государственных актов</h2>
+          <span class="section-tag">Творцы Истории</span>
+          <h2 class="section-title">Исторические личности, изменившие судьбу Отечества</h2>
           <p class="section-desc">
-            Цитаты, юридическое значение и прямые ссылки на первоисточники на государственных порталах Российской Федерации (pravo.gov.ru, kremlin.ru).
+            Государи, полководцы, дипломаты и первопроходцы, чья несгибаемая воля заложила величие и суверенитет Российского государства.
           </p>
         </div>
 
-        <div class="docs-grid" id="documents-container">
-          <!-- Рендерится динамически из script.js -->
+        <div class="figures-grid" id="figures-container">
+          <!-- Рендерится динамически script.js -->
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         РАЗДЕЛ 5: Интерактивный исторический квиз
+         РАЗДЕЛ 4: Архив первоисточников и государственных документов
+         ====================================================================== -->
+    <section id="documents" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Правовой Фундамент</span>
+          <h2 class="section-title">Архив первоисточников и государственных актов</h2>
+          <p class="section-desc">
+            Официальные законы, манифесты и конституционные акты с возможностью перейти к оригиналам на государственных правовых порталах.
+          </p>
+        </div>
+
+        <div class="docs-filter-bar">
+          <button class="doc-filter-btn active" data-type="all">Все акты</button>
+          <button class="doc-filter-btn" data-type="const">🏛️ Конституционные акты</button>
+          <button class="doc-filter-btn" data-type="code">📜 Своды законов</button>
+          <button class="doc-filter-btn" data-type="manifest">👑 Высочайшие манифесты</button>
+          <button class="doc-filter-btn" data-type="speech">🌐 Программные речи</button>
+          <button class="doc-filter-btn" data-type="treaty">🤝 Международные договоры</button>
+        </div>
+
+        <div class="docs-grid" id="documents-container">
+          <!-- Рендерится динамически script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         РАЗДЕЛ 5: Тематические подборки и факты
+         ====================================================================== -->
+    <section id="collections" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Связь Эпох</span>
+          <h2 class="section-title">Тематические подборки и исторические параллели</h2>
+          <p class="section-desc">
+            Узловые темы, проходящие через тысячелетие: эволюция реформ, защита морских рубежей и решающие победы.
+          </p>
+        </div>
+
+        <div class="collections-grid" id="collections-container">
+          <!-- Рендерится динамически script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         РАЗДЕЛ 6: Интерактивный исторический квиз
          ====================================================================== -->
     <section id="quiz" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Проверьте свои знания</span>
-          <h2 class="section-title">Исторический квиз: Новейшая Россия</h2>
+          <span class="section-tag">Проверьте Свои Знания</span>
+          <h2 class="section-title">Исторический квиз: Испытание эрудиции</h2>
           <p class="section-desc">
-            8 вопросов на знание ключевых дат, нормативных актов и поворотных событий новейшей истории нашей Родины.
+            Выберите тему испытания и ответьте на вопросы. Каждый ответ сопровождается развернутым историческим комментарием и ссылкой на событие.
           </p>
         </div>
 
         <div class="quiz-wrapper">
+          <!-- Выбор категории квиза -->
+          <div class="quiz-category-selector">
+            <button class="quiz-cat-btn active" data-quiz-cat="all">🌟 Все эпохи (12 вопросов)</button>
+            <button class="quiz-cat-btn" data-quiz-cat="ancient">🛡️ Древняя Русь</button>
+            <button class="quiz-cat-btn" data-quiz-cat="empire">👑 Российская империя</button>
+            <button class="quiz-cat-btn" data-quiz-cat="soviet">⭐ Советская эпоха</button>
+            <button class="quiz-cat-btn" data-quiz-cat="modern">🇷🇺 Новейшая Россия</button>
+          </div>
+
           <div class="quiz-progress-bar">
             <div class="quiz-progress-fill" id="quiz-progress"></div>
           </div>
           <div class="quiz-header-status">
-            <span id="quiz-status-text">Вопрос 1 из 8 • Баллы: 0</span>
-            <span>Интерактивный тест</span>
+            <span id="quiz-status-text">Вопрос 1 из 12 • Баллы: 0</span>
+            <span>Интерактивное испытание</span>
           </div>
           <div id="quiz-card-content">
-            <!-- Интерактивный вопрос рендерится script.js -->
+            <!-- Вопросы квиза рендерятся script.js -->
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- ========================================================================
+       Полноразмерное Модальное Окно Исследования События (Research Modal)
+       ======================================================================== -->
+  <div class="modal-backdrop" id="research-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Закрыть окно">&times;</button>
+      <div id="research-modal-content">
+        <!-- Контент события генерируется script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       Выдвижная Боковая Панель «Мои Закладки» (Drawer)
+       ======================================================================== -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <div class="drawer-container" id="bookmarks-drawer" role="complementary" aria-label="Мои закладки">
+    <div class="drawer-header">
+      <h3 class="drawer-title">⭐ Мой исторический архив</h3>
+      <button class="modal-close-btn" id="close-drawer-btn" style="position: static;" aria-label="Закрыть панель">&times;</button>
+    </div>
+    <div class="drawer-content" id="drawer-bookmarks-content">
+      <!-- Список сохраненных материалов -->
+    </div>
+    <div class="drawer-footer">
+      <span style="font-size: 0.85rem; color: var(--text-dim);">Сохраняется в вашем браузере</span>
+      <button style="background: none; border: 1px solid var(--border-subtle); color: #ef4444; padding: 6px 12px; border-radius: var(--radius-pill); cursor: pointer; font-size: 0.8rem;" onclick="clearAllBookmarks()">
+        Очистить всё
+      </button>
+    </div>
+  </div>
 
   <!-- ========================================================================
        Подвал (Footer)
@@ -235,32 +372,45 @@
         <div class="footer-brand">
           <h3>🦅 Проект «Хроники России»</h3>
           <p>
-            Интерактивный историко-документальный портал, объединяющий узловые вехи тысячелетнего пути Российского государства и глубокую хронику новейшей истории Российской Федерации (1991 — 2026).
+            Интерактивный цифровой музей и историко-документальный портал, объединяющий узловые вехи тысячелетнего пути Российского государства и глубокую летопись новейшей истории Российской Федерации (1991 — 2026).
           </p>
         </div>
         <div class="footer-col">
-          <h4>Навигация</h4>
+          <h4>Разделы портала</h4>
           <ul>
-            <li><a href="#eras">Вехи тысячелетия</a></li>
-            <li><a href="#modern">Новейшая история РФ</a></li>
-            <li><a href="#map">Интерактивная карта</a></li>
-            <li><a href="#documents">Архив актов</a></li>
-            <li><a href="#quiz">Исторический тест</a></li>
+            <li><a href="#chronology">Интерактивная Хроника</a></li>
+            <li><a href="#map">Карта решений</a></li>
+            <li><a href="#figures">Исторические личности</a></li>
+            <li><a href="#documents">Архив первоисточников</a></li>
+            <li><a href="#collections">Тематические подборки</a></li>
+            <li><a href="#quiz">Исторический квиз</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>О проекте</h4>
+          <h4>Эпохи государства</h4>
           <ul>
-            <li><a href="about.html">Источники и база</a></li>
-            <li><a href="https://github.com/kazimir7/chronicles-rf" target="_blank" rel="noopener noreferrer">Репозиторий на GitHub</a></li>
+            <li><a href="#chronology">Древняя Русь (862—1132)</a></li>
+            <li><a href="#chronology">Раздробленность и Иго (1132—1480)</a></li>
+            <li><a href="#chronology">Русское царство (1480—1689)</a></li>
+            <li><a href="#chronology">Российская империя (1721—1917)</a></li>
+            <li><a href="#chronology">Советский Союз (1917—1991)</a></li>
+            <li><a href="#chronology">Новейшая Россия (1991—2026)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Официальные источники</h4>
+          <ul>
+            <li><a href="about.html">Методология и база</a></li>
             <li><a href="http://pravo.gov.ru" target="_blank" rel="noopener noreferrer">Портал pravo.gov.ru</a></li>
-            <li><a href="http://kremlin.ru" target="_blank" rel="noopener noreferrer">Сайт kremlin.ru</a></li>
+            <li><a href="http://kremlin.ru" target="_blank" rel="noopener noreferrer">Сайт Президента kremlin.ru</a></li>
+            <li><a href="https://mil.ru" target="_blank" rel="noopener noreferrer">Министерство обороны РФ</a></li>
+            <li><a href="https://github.com/kazimir7/chronicles-rf" target="_blank" rel="noopener noreferrer">Репозиторий на GitHub</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Проект «Хроники России». Материалы систематизированы на основе официальных государственных актов и стандартов исторического просвещения РФ.</p>
+        <p>&copy; 2026 Проект «Хроники России». Материалы систематизированы на основе официальных государственных актов, летописных источников и единого стандарта исторического просвещения РФ.</p>
       </div>
     </div>
   </footer>
